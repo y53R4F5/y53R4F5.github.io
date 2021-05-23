@@ -1,13 +1,8 @@
-<?php
-header('content-type:text/html;charset=utf-8');
-$url='index.php';
- ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    //跳转页面，跳转时间:2秒钟，目标地址:index.php
-    <meta http-equiv="refresh" content="2;url=<?php echo $url; ?>">
+    <meta http-equiv="refresh" content="0.5;url=<?php echo base64_decode($_GET['u']); ?>">
     <title>skip...</title>
 </head>
 
