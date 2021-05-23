@@ -11,7 +11,9 @@
        return(false);
 }
     
-   var upi = getQueryVariable('u');
+   var u = getQueryVariable('u');
+  
+  var decodedData = window.atob(u);
    alert(upi);
    //window.location.href = upi;
 </script>
