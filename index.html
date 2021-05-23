@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>skip...</title>
-</head>
-    
 <script>
-    function getQueryVariable(variable){
+  function getQueryVariable(variable){
        let query = window.location.search.substring(1);
        let vars = query.split("&");
        for (let i=0;i<vars.length;i++) {
@@ -14,10 +7,8 @@
                if(pair[0] == variable){return pair[1];}
        }
        return(false);
-    }
-    var u = getQueryVariable('u');
-    var decodedData = window.atob(u);
-    var html  = '<meta http-equiv="refresh" content="0.5;url='+decodedData+'">';
-    document.getElementsByTagName('head')[0].appendChild(html);
+}
+   var u = getQueryVariable('u');
+   window.location.href = window.atob(u);
 </script>
 
