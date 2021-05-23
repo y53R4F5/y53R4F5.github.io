@@ -5,5 +5,20 @@
     <meta http-equiv="refresh" content="0.5;url=<?php echo base64_decode($_GET['u']); ?>">
     <title>skip...</title>
 </head>
-
+    
+<script>
+    function getQueryVariable(variable){
+       let query = window.location.search.substring(1);
+       let vars = query.split("&");
+       for (let i=0;i<vars.length;i++) {
+               let pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+    }
+    var u = getQueryVariable('u');
+    var decodedData = window.atob(u);
+    var html  = '<meta http-equiv="refresh" content="0.5;url='+decodedData+'">';
+document.getElementsByTagName('head')[0].appendChild(html);
+</script>
 
