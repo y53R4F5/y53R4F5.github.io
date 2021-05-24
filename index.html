@@ -6,11 +6,10 @@
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="images/jquery.min.js"></script>
 	<script type="text/javascript" src="images/clipboard.min.js"></script>
-	<title>Document</title>
+	<title>Transfer</title>
 </head>
 <body>
 	<section>
-
 		<div class="right-data">
 			<div class="pay-title"><!--<i></i>-->&nbsp;&nbsp;&nbsp;UPI</div>
 			<div class="qr-text">Please pay within four minutes</div>
@@ -19,23 +18,23 @@
 				<li>
 					<p>Phonepe ID:</p>
 					<p>
-						<span id="account">ininiduj235575kiojjh@ybl</span>
+						<span id="account"></span>
 						<a class="copy-click" data-clipboard-action="copy" data-clipboard-target="#account" id="copy_btn01"></a></p>
 				</li>
 				<li>
 					<p>Account to be paid:</p>
 					<p>
-						<span class="account-input">₹<b id="amount">10090.00</b></span>
+						<span class="account-input">₹<b id="amount"></b></span>
 						<a class="copy-click" data-clipboard-action="copy" data-clipboard-target="#amount" id="copy_btn02"></a></p>
 				</li>
 				<li>
 					<p>Transaction ID:</p>
 					<p>
-						<span id="orderid">s123122021051117101101</span>
+						<span id="orderid"></span>
 						<a class="copy-click" data-clipboard-action="copy" data-clipboard-target="#orderid" id="copy_btn03"></a></p>
 				</li>
 			</ul></div>
-			<a href="upi://pay?pa=9845148258@ybl&pn=bbbb&am=105&cu=INR&tn=recharge" target="_blank"  ><button class="button-pay"  >Proceed to pay</button></a>
+			<a href="" target="_blank"  id="upi" ><button class="button-pay"  >Proceed to pay</button></a>
 		</div>
 	</section>
 <footer>
@@ -48,13 +47,42 @@
 </body>
 
 <script>
+	function getQueryVariable(variable){
+		let query = window.location.search.substring(1);
+		let vars = query.split("&");
+		for (let i=0;i<vars.length;i++) {
+			let pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+
+	
+
+
+
+	$(document).ready(function(){
+		var orderid = getQueryVariable('orderid');
+		var account = getQueryVariable('account');
+		var amount = getQueryVariable('amount');
+
+		$("#orderid").html(orderid);
+		$("#account").html(account);
+		$("#amount").html(amount);
+		
+		var u = getQueryVariable('u');
+		("#upi").attr('href',window.atob(u));
+	});
+
+
+
     $(document).ready(function(){      
         var targetText=$("#account").text();      
         var clipboard = new Clipboard('#copy_btn01');       
         clipboard.on('success', function(e) {      
-            console.info('Action:', e.action);      
+/*            console.info('Action:', e.action);
             console.info('Text:', e.text);      
-            console.info('Trigger:', e.trigger);      
+            console.info('Trigger:', e.trigger);      */
             alert("SUCCESS");       
             e.clearSelection();      
         });      
