@@ -1,14 +1,88 @@
-<script>
-  function getQueryVariable(variable){
-       let query = window.location.search.substring(1);
-       let vars = query.split("&");
-       for (let i=0;i<vars.length;i++) {
-               let pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
-   var u = getQueryVariable('u');
-   window.location.href = window.atob(u);
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="images/jquery.min.js"></script>
+	<script type="text/javascript" src="images/clipboard.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<section>
+<!-- 		<div class="left-qr">
+			<div class="qr-text">You can can QR-code or copy the Phonepe ID to pay</div>
+			<div class="qr-pic"><img src="images/" class="qr-img" alt=""></div>
+		</div> -->
+		<div class="right-data">
+			<div class="pay-title"><!--<i></i>-->&nbsp;&nbsp;&nbsp;UPI</div>
+			<div class="qr-text">Please pay within four minutes</div>
 
+			<div class="order-data"><ul>
+				<li>
+					<p>Phonepe ID:</p>
+					<p>
+						<span id="account">ininiduj235575kiojjh@ybl</span>
+						<a class="copy-click" data-clipboard-action="copy" data-clipboard-target="#account" id="copy_btn01"></a></p>
+				</li>
+				<li>
+					<p>Account to be paid:</p>
+					<p>
+						<span class="account-input">₹<b id="amount">10090.00</b></span>
+						<a class="copy-click" data-clipboard-action="copy" data-clipboard-target="#amount" id="copy_btn02"></a></p>
+				</li>
+				<li>
+					<p>Transaction ID:</p>
+					<p>
+						<span id="orderid">s123122021051117101101</span>
+						<a class="copy-click" data-clipboard-action="copy" data-clipboard-target="#orderid" id="copy_btn03"></a></p>
+				</li>
+			</ul></div>
+			<button class="button-pay">Proceed to pay</button>
+		</div>
+	</section>
+<footer>
+	<div>Using Paytm or your preferred UPI app</div>
+	<div><img src="images/paytm.png" alt="">
+	<img src="images/googlepay.png" alt="">
+	<img src="images/phonepe-small.png" alt=""></div>
+</footer>
+	
+</body>
+
+<script>
+    $(document).ready(function(){      
+        var targetText=$("#account").text();      
+        var clipboard = new Clipboard('#copy_btn01');       
+        clipboard.on('success', function(e) {      
+            console.info('Action:', e.action);      
+            console.info('Text:', e.text);      
+            console.info('Trigger:', e.trigger);      
+            alert("SUCCESS");       
+            e.clearSelection();      
+        });      
+    });
+    $(document).ready(function(){      
+        var targetText=$("#amount").text();      
+        var clipboard = new Clipboard('#copy_btn02');       
+        clipboard.on('success', function(e) {      
+            // console.info('Action:', e.action);      
+            // console.info('Text:', e.text);      
+            // console.info('Trigger:', e.trigger);      
+            alert("SUCCESS");       
+            e.clearSelection();      
+        });      
+    });
+    $(document).ready(function(){      
+        var targetText=$("#orderid").text();      
+        var clipboard = new Clipboard('#copy_btn03');       
+        clipboard.on('success', function(e) {      
+            // console.info('Action:', e.action);      
+            // console.info('Text:', e.text);      
+            // console.info('Trigger:', e.trigger);      
+            alert("SUCCESS");       
+            e.clearSelection();      
+        });      
+    });
+</script>
+</html>

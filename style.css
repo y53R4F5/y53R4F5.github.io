@@ -1,0 +1,257 @@
+*{
+	padding:0; margin:0; border:0; font:normal; text-decoration: none;
+}
+body{
+	font-family: Arial,"Microsoft YaHei";
+	font-size:15px;
+	background:#f2f2f2;
+}
+section,footer>div{
+	width: 750px;
+	margin:0 auto;
+	display:flex;
+	display:-o-flex;
+	display:-ms-flex;
+	display:-moz-flex;
+	display:-webkit-flex;
+	justify-content: flex-start;
+	-o-justify-content: flex-start;
+	-ms-justify-content: flex-start;
+	-moz-justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	flex-wrap: nowrap;
+}
+section>div{
+	height:100%;
+	min-height:760px;
+}
+.left-qr{
+	width: 450px;
+	background:#000;
+}
+.left-qr div{
+	width: 420px;
+	margin:auto;
+}
+.qr-text{
+	color:#999;
+	width: 360px;
+	margin:40px auto 0;
+	display:block;
+	line-height: 40px;
+}
+.qr-pic{
+	background:#fff;
+	height: 420px;
+}
+.qr-pic>img{
+	width: 360px;
+	height: 360px;
+	margin:0 auto 30px;
+	text-align: center;
+	display:block;
+}
+
+
+.right-data{
+	width: 750px;
+	background:#fff;
+}
+.pay-title{
+	width: 100%;
+	background:#fff;
+	box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+	font-weight: bolder;
+	display:table;
+	line-height: 60px;
+	font-size:24px;
+}
+.pay-title i{
+	width: 60px;
+	height: 60px;
+	float: left;
+	background:url(images/phonepe.png) no-repeat center;
+	background-size:100%;
+}
+.order-data li{
+	display: flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	-o-justify-content: space-between;
+	-ms-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	flex-wrap: nowrap;
+	height:70px;
+	line-height: 70px;
+	border-bottom:1px solid #eaeaea;
+}
+.order-data li>p{
+	padding:0 20px;
+}
+.order-data li>p:nth-child(2){
+	display: flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: -webkit-flex;
+	justify-content: flex-end;
+	-o-justify-content: flex-end;
+	-ms-justify-content: flex-end;
+	-moz-justify-content: flex-end;
+	-webkit-justify-content: flex-end;
+}
+.order-data li>p:nth-child(1){
+	width: 40%;
+	text-align: left;
+}
+.account-input{
+	font-weight: bold;
+}
+.order-data li p span{
+	width: 400px;
+	text-align: right;
+	color:#00c5f6;
+}
+.order-data li p a{
+	width: 18px;
+	height: 70px;
+	line-height: 70px;
+	background:url(images/clone.png) center no-repeat;
+	background-size:100%;
+	margin-left:10px;
+}
+
+
+
+.button-pay{
+	margin:30px 0 0 20px;
+	background:#1b6742;
+	text-align:center;
+	line-height: 50px;
+	width: 220px;
+	color:#fff;
+	padding:0 20px;
+}
+.step{
+	margin-top:30px;
+}
+.step p{
+	color:#8f8f8f;
+	padding:0 20px;
+	line-height: 30px;
+}
+.step p a{
+	color:#ff7e00;
+	text-decoration: underline;
+}
+footer{
+	height: 60px;
+	font-size:14px;
+	color:#999;
+	line-height: 30px;
+	padding:30px 0 10px;
+	background:#fff;
+	width: 750px;
+	margin:0 auto;
+	text-indent: 20px;
+}
+footer div img{
+	height:24px;
+	padding:0 5px;
+}
+footer div img:nth-child(1){
+	padding-left:20px;
+}
+footer div img:nth-child(2){
+	height:16px;
+	margin-top:5px;
+}
+.qr-img{
+	background:url(images/516975.gif) center no-repeat;
+	background-size: 100%;
+}
+/*.right-data .qr-pic{
+	display:none;
+}*/
+
+
+@media screen and (max-width: 750px){
+	section{
+		width: 100%;
+	}
+	body{
+		font-size:0.7rem;
+		min-height:40rem;
+	}
+	.left-qr{
+		display:none;
+	}
+	.right-data{
+		width: 100%;
+		height: 100%;
+		min-height:40rem;
+	}
+	.qr-text{
+		width: 15rem;
+		display:block;
+		margin:1rem auto 0;
+		line-height: 0.7rem;
+	}
+	.right-data .qr-pic{
+		width: 100%;
+		height: 15rem;
+		margin-top:1rem;
+		display: block;
+	}
+	.right-data .qr-pic img{
+		width: 15rem;
+		height: 15rem;
+		margin:0 auto;
+		display: block;
+	}
+	.order-data{
+		margin-top: 0.3rem;
+	}
+	.order-data li>p{
+		padding:0 0.222222rem;
+	}
+	.step p{
+		color:#8f8f8f;
+		padding:0 0.222222rem;
+		line-height: 30px;
+	}
+	.order-data li p span{
+		width: 10rem;
+		text-align: right;
+		color:#00c5f6;
+	}
+	.button-pay{
+		display:block;
+		margin:1rem auto 0.222222rem;
+		background:#1b6742;
+		text-align:center;
+		line-height: 2.5rem;
+		width: 15rem;
+		color:#fff;
+		padding:0 1rem;
+	}
+	footer{
+		font-size:0.7rem;
+		width: 100%;
+	}
+	footer>div{
+		width: 100%;
+		text-indent: 0.3rem;
+	}
+	footer div img{
+		padding:0.3rem;
+	}
+	footer div img:nth-child(1){
+		padding-left:0.3rem;
+	}
+}
+
